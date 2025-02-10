@@ -93,9 +93,9 @@ Q.worksprograms_adopted = 0;
 // have we formed the iron front?
 // Draconic - idk what to do with the iron front, come back to this later
 Q.iron_front_formed = 0;
-// republican_opening support (Lambach's proposal, people's party equivalent)
-Q.republican_opening_support = 0;
-Q.republican_opening = 0;
+// peoples_party support (Lambach's proposal, people's party equivalent)
+Q.peoples_party_support = 0;
+Q.peoples_party = 0;
 // support for austerity
 Q.austerity_support = 0;
 Q.austerity_adopted = 0;
@@ -442,8 +442,8 @@ Q.dnvp_in_government_time = 0;
 Q.z_in_government = 1;
 Q.lvp_in_government = 1;
 Q.wp_in_government = 0;
-Q.uspd_in_government = 1;
-Q.spd_in_government = 0;
+Q.udnvp_in_government = 1;
+Q.dnvp_in_government = 0;
 Q.nsdap_in_government = 0;
 
 // make sure everything in this section is perfect
@@ -621,7 +621,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'inter_party_relationships', 'international_relations',
     'iron_front', 'media', 'enemies',
     'party_organizations', 'rally', 'stahlhelm',
-    'shuffle_leadership', 'streetfighting', 'republican_opening',
+    'shuffle_leadership', 'streetfighting', 'peoples_party',
     'party_disunity',
     // govt
     'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
@@ -656,7 +656,7 @@ Q.rally_timer = 0;
 Q.reichsbanner_timer = 0;
 Q.shuffle_leadership_timer = 0;
 Q.streetfighting_timer = 0;
-Q.republican_opening_timer = 0;
+Q.peoples_party_timer = 0;
 Q.bruning_event_timer = 0;
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
