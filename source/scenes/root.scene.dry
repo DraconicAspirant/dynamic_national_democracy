@@ -18,7 +18,7 @@ go-to: start_menu_2
 
 
 @start
-on-arrival: {!
+on-arrival: {
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
@@ -822,7 +822,7 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
-!}
+}
 
 set-bg: img/map_2.jpg
 new-page: true
@@ -855,7 +855,7 @@ go-to: 1928_main
 
 @1928_historical
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
-on-arrival: {!
+on-arrival: {
 Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
@@ -871,12 +871,12 @@ Q.uspd_relation = 28;
 Q.wp_relation = 53;
 Q.budget = 2;
 this.state.disableSaves = true;
-!}
+}
 go-to: 1928_main
 
 @1928_mod_mode
 subtitle: Intended way of experiencing this mod.
-on-arrival: {!
+on-arrival: {
 Q.difficulty = -1;
 Q.resources = 3;
 Q.dues = 1;
@@ -886,7 +886,7 @@ Q.nsdap_relation = 26;
 Q.uspd_relation = 31;
 Q.wp_relation = 56;
 Q.budget = 2;
-!}
+}
 go-to: 1928_main
 
 @1928_main
