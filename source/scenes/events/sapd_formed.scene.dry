@@ -4,7 +4,7 @@ Q.sapd_formed = 1;
 Q.parties.push('sapd');
 
 Q.workers_sapd = 10;
-Q.workers_spd -= 3;
+Q.workers_uspd -= 3;
 Q.new_middle_sapd = 1;
 Q.old_middle_sapd = 0;
 Q.rural_sapd = 0;
@@ -13,7 +13,7 @@ Q.catholics_sapd = 0;
 
 Q.workers_other -= 5;
 
-if (Q.unions_independent) {
+if (Q.youngconservatives_resign) {
     Q.workers_sapd += 8;
 }
 
