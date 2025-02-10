@@ -9,18 +9,18 @@ new-page: true
 
 Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. She was a former member of the <span style="color: #D47B9B;">**USPD**</span>.
 
-- @campaign_pacifism
+- @campaign_militarism
 - @structure_
 - @curriculum_
 - @root: Return to main
 
-@campaign_pacifism
-title: Rally for pacifism.
+@campaign_militarism
+title: Rally for militarism.
 subtitle: Campaign for internationalism and against militarism.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6;
-go-to: rally.pacifism
+go-to: rally.militarism
 
 
 @curriculum_

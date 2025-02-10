@@ -20,7 +20,7 @@ title: Building the Left
 subtitle: Push the <span style="color: #c00000;">**SPD**</span> to the left.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 6; left_dissent -= 8; reformist_dissent += 2
+on-arrival: advisor_action_timer = 6; right_strength += 6; right_dissent -= 8; christiansocial_dissent += 2
 
 We have increased the strength of the left faction with the <span style="color: #c00000;">**SPD**</span>.
 
@@ -29,7 +29,7 @@ title: Cooperation with the <span style="color: #700000;">**KPD**</span>
 subtitle: Push the party to be more friendly towards the <span style="color: #700000;">**KPD**</span>.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 4*(1-dissent); reformist_dissent += 2; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
+on-arrival: advisor_action_timer = 6; right_strength += 5; nsdap_relation += 4*(1-dissent); christiansocial_dissent += 2; nazi_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
 
 Through his work, Rosenfeld has defended individual <span style="color: #700000;">**KPD**</span> members; this should make some connections possible.
 
@@ -45,9 +45,9 @@ go-to: prussian_affairs_left
 title: Against toleration
 view-if: not constructive_vonc
 subtitle: Break our current toleration arrangement, and bring down the government via a no-confidence vote.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_toleration == 0 : The <span style="color: #c00000;">SPD</span> is not currently in toleration. ?]
-choose-if: advisor_action_timer == 0 and spd_toleration
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time + 3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 4; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 8
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if dnvp_toleration == 0 : The <span style="color: #c00000;">SPD</span> is not currently in toleration. ?]
+choose-if: advisor_action_timer == 0 and dnvp_toleration
+on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time + 3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; dnvp_toleration = 0; right_strength += 8; anti_democracy -= 4; new_middle_uspd -= 3; rural_uspd -= 3; old_middle_uspd -= 3; catholics_uspd -= 3; christiansocial_dissent += 8
 
 We have grown tired of the burdens of toleration, and have called a vote of no confidence in the current minority government.
 

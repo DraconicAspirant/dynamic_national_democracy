@@ -40,28 +40,28 @@ Which faction should we support?
 - @support_neorev: Neorevisionists
 
 @support_left
-on-arrival: left_dissent -= 8; left_strength += 8
+on-arrival: right_dissent -= 8; right_strength += 8
 
 Vorwärts prints editorials in support of Left positions.
 
 @support_center
-on-arrival: center_dissent -= 8; center_strength += 8
+on-arrival: agrarian_dissent -= 8; agrarian_strength += 8
 
 Vorwärts prints editorials in support of centrist positions.
 
 @support_labor
-on-arrival: labor_dissent -= 8; labor_strength += 8
+on-arrival: youngconservative_dissent -= 8; youngconservative_strength += 8
 
 Vorwärts prints editorials in support of the policies of the trade unions.
 
 @support_reform
-on-arrival: reformist_dissent -= 8; reformist_strength += 8;
+on-arrival: christiansocial_dissent -= 8; christiansocial_strength += 8;
 
 Vorwärts prints editorials in support of the reformist policies.
 
 @support_neorev
 view-if: neorevisionism
-on-arrival: neorevisionist_dissent -= 8; neorevisionist_strength += 8
+on-arrival: paramilitary_dissent -= 8; paramilitary_strength += 8
 
 Vorwärts prints editorials in support of neorevisionist ideas.
 
@@ -70,6 +70,6 @@ title: Cooperation with the <span style="color: #700000;">**KPD**</span>
 subtitle: Could we build closer ties with the <span style="color: #700000;">**KPD**</span>?
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 2; kpd_relation += 4*(1-dissent); reformist_dissent += 2
+on-arrival: advisor_action_timer = 6; right_strength += 2; nsdap_relation += 4*(1-dissent); christiansocial_dissent += 2
 
 Stampfer works towards closer ties with the <span style="color: #700000;">**KPD**</span> through our media.

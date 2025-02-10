@@ -11,9 +11,9 @@ Leber is a former army officer who turned against the military leaders of the Ka
 
 - @democratic_rally
 - @military_affairs
-- @support_peoples_party
-- @build_peoples_party
-- @campaigning_peoples_party
+- @support_republican_opening
+- @build_republican_opening
+- @campaigning_republican_opening
 - @root: Return to main
 
 @democratic_rally
@@ -21,7 +21,7 @@ title: Rally for democracy
 subtitle: Rally our party and the German people to defend democracy and freedom.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; reformist_strength += 3; workers_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 3*(1-dissent) if democratization >= 4
+on-arrival: advisor_action_timer = 6; anti_democracy += 5; authoritarianism += 1; paramilitary_strength += 5; christiansocial_strength += 3; workers_uspd += 4*(1-dissent) if authoritarianism >= 4; new_middle_uspd += 3*(1-dissent) if authoritarianism >= 4
 
 Leber helps us to rally the people in defense of democracy.
 
@@ -33,30 +33,30 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: military_policy
 
-@support_peoples_party
+@support_republican_opening
 title: Build support for a People's Party
 subtitle: Can we expand our party beyond the industrial working class?
-view-if: peoples_party = 0
-choose-if: peoples_party_support <= 4 and advisor_action_timer = 0 and peoples_party == 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support > 4: There is already substantial support for a People's Party. ?]
-on-arrival: advisor_action_timer = 6; peoples_party_support += 1
+view-if: republican_opening = 0
+choose-if: republican_opening_support <= 4 and advisor_action_timer = 0 and republican_opening == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if republican_opening_support > 4: There is already substantial support for a People's Party. ?]
+on-arrival: advisor_action_timer = 6; republican_opening_support += 1
 
 We are building up support for the idea of a People's Party.
 
-@build_peoples_party
+@build_republican_opening
 title: Building a People's Party
 subtitle: Can we expand our party beyond the industrial working class?
-view-if: peoples_party == 0
-choose-if: peoples_party_support >= 3 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 3: There is not enough support for this policy within the party. ?]
+view-if: republican_opening == 0
+choose-if: republican_opening_support >= 3 and advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if republican_opening_support < 3: There is not enough support for this policy within the party. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
-go-to: peoples_party
+go-to: republican_opening
 
-@campaigning_peoples_party
+@campaigning_republican_opening
 title: Campaigning as a People's Party
 subtitle: Campaigning with some of our previously nontraditional demographics.
-view-if: peoples_party = 1
+view-if: republican_opening = 1
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6;
-go-to: peoples_party_campaigning
+go-to: republican_opening_campaigning
