@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs
 on-arrival: economic_policy_timer += 12; privatize_subsidize_budget = 4; privatize_subsidize_budget -= 1 if works_councils >= 2; privatize_subsidize_budget -= 1 if works_councils >= 3; privatize_subsidize_budget -= 1 if privatizations + privatization_progress >= 2; wtb_budget = 4; wtb_budget -= 1 if works_councils >= 2 or privatizations >= 1 or pro_labor >= 2
-view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0
+view-if: dnvp_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0
 card-image: img/portraits/SchmidtRobert.jpg
 #subtitle: Policies to address the economic crisis.
 
