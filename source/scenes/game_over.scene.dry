@@ -41,12 +41,12 @@ if (Q.republic_victory && Q.resist_coup) {
 // Der österreichische Gefreiter - deport hitler
 // Volkspartei - form a people's party
 // Hirschfeld - legalize 2 of homosexual rights and trans rights.
-if (Q.homosexual_rights >= 2) {
+if (Q.new_kulturkampf >= 2) {
     this.achieve('hirschfeld');
 }
 // Mädchen und Uniform - a woman's place is in the Reichsbanner.
 // Gleichheit - Support and enact reforms for women's rights.
-if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_rights >= 3)) {
+if ((Q.womens_work && Q.womens_lefts >= 5) || (Q.abortion_rights && Q.womens_lefts >= 3)) {
     this.achieve('equality');
 }
 
@@ -72,24 +72,24 @@ for (var c of Q.classes) {
 // Die Rote Fahne - join the KPD in the May Day march.
 // Mehrheitspartei - form an <span style="color: #c00000;">**SPD**</span> majority government in the Reichstag.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
-if (Q.new_middle_spd_normalized && Q.new_middle_spd_normalized >= 50) {
+if (Q.new_middle_uspd_normalized && Q.new_middle_uspd_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
 }
 // Bauernrevolution - have over 50% rural support.
-if (Q.rural_spd_normalized && Q.rural_spd_normalized >= 50) {
+if (Q.rural_uspd_normalized && Q.rural_uspd_normalized >= 50) {
     this.achieve('bauernrevolution');
 }
-if (Q.catholics_spd_normalized && Q.catholics_spd_normalized >= 50) {
+if (Q.catholics_uspd_normalized && Q.catholics_uspd_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
-if (Q.workers_spd_normalized >= 80 && Q.new_middle_spd_normalized <= 20 && Q.old_middle_spd_normalized <= 20 && Q.rural_spd <= 20) {
+if (Q.workers_uspd_normalized >= 80 && Q.new_middle_uspd_normalized <= 20 && Q.old_middle_uspd_normalized <= 20 && Q.rural_uspd <= 20) {
     this.achieve('klassenkampf');
 }
-if (Q.workers_spd_normalized >= 40 && Q.new_middle_spd_normalized >= 40 && Q.old_middle_spd_normalized >= 40 && Q.rural_spd >= 40) {
+if (Q.workers_uspd_normalized >= 40 && Q.new_middle_uspd_normalized >= 40 && Q.old_middle_uspd_normalized >= 40 && Q.rural_uspd >= 40) {
     this.achieve('grosse_volkspartei');
 }
 // Räterepublik - begin the transformation to a socialist economy.
-if (Q.spd_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democracy >= 3) || (Q.nationalization_progress >= 1 && Q.economic_democracy >= 4))) {
+if (Q.dnvp_in_government && ((Q.privatization_progress >= 2 && Q.economic_rationalization >= 3) || (Q.privatization_progress >= 1 && Q.economic_rationalization >= 4))) {
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
@@ -97,7 +97,7 @@ if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.chancellor != "Hitler" 
     this.achieve("polykrise");
 }
 // Wirtschaftsexperiment - implement two different economic plans.
-if ((Q.nationalization_progress >= 1 && Q.wtb_implemented >= 1) || (Q.wtb_implemented >= 1 && Q.moderate_plan_progress >= 1) || (Q.nationalization_progress >= 1 && Q.moderate_plan_progress >= 1)) {
+if ((Q.privatization_progress >= 1 && Q.wtb_implemented >= 1) || (Q.wtb_implemented >= 1 && Q.works_programs_plan_progress >= 1) || (Q.privatization_progress >= 1 && Q.works_programs_plan_progress >= 1)) {
     this.achieve("wirtschaftsexperiment");
 }
 // Syndikalismus - support factory takeovers by workers.
@@ -281,9 +281,9 @@ go-to: eg_menu
 
 The <span style="color: #c00000;">**SPD**</span> is ruling as part of an emergency minority government, led by President [+ president +] and Chancellor [+ chancellor +]. This is a temporary and unstable arrangement, leaving the door open to further <span style="color: #808080;">authoritarianism</span>.
 
-@peoples_party_achieved
+@republican_opening_achieved
 title: The <span style="color: #c00000;">**SPD**</span> is a "People's Party".
-view-if: peoples_party == 1
+view-if: republican_opening == 1
 tags: endings
 go-to: eg_menu
 
@@ -291,7 +291,7 @@ The <span style="color: #c00000;">**SPD**</span> has been declared a "People's P
 
 @nationalization_achieved
 title: Socialization of the economy has commenced.
-view-if: nationalization_progress >= 2
+view-if: privatization_progress >= 2
 tags: endings
 go-to: eg_menu
 
