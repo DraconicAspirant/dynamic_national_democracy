@@ -24,13 +24,13 @@ We maintain our current dues. [? if dissent_percent < 5: Our low party dissent g
 @reduce
 subtitle: [+ dues - 1 +] resources gained.
 choose-if: dues > 1
-on-arrival: dues -= 1; resources += dues; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8; resources += 1 if dissent_percent < 5; resources -= 1 if dissent_percent > 30
+on-arrival: dues -= 1; resources += dues; right_dissent -= 8; agrarian_dissent -= 8; christiansocial_dissent -= 8; youngconservative_dissent -= 8; resources += 1 if dissent_percent < 5; resources -= 1 if dissent_percent > 30
 
 Our current members appreciate this, but no one decides to join a party because of the low dues. [? if dissent_percent < 5: Our low party dissent gains us more resources. ?][? if dissent_percent > 30: Our high party dissent loses us resources. ?]
 
 @increase
 subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += dues; workers_spd -= 3; unemployed_spd -= 3; workers_spd -= 10 if unemployed >= 15; unemployed_spd -= 10 if unemployed >= 15; workers_spd -= 3*dues if dues >= 5; unemployed_spd -= 3*dues if dues >= 5; resources += 1 if dissent_percent < 5; resources -= 1 if dissent_percent > 30
+on-arrival: dues += 1; resources += dues; workers_uspd -= 3; unemployed_uspd -= 3; workers_uspd -= 10 if unemployed >= 15; unemployed_uspd -= 10 if unemployed >= 15; workers_uspd -= 3*dues if dues >= 5; unemployed_uspd -= 3*dues if dues >= 5; resources += 1 if dissent_percent < 5; resources -= 1 if dissent_percent > 30
 view-if: dues <= 4
 
 Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. [? if dissent_percent < 5: Our low party dissent gains us more resources. ?][? if dissent_percent > 30: Our high party dissent loses us resources. ?]

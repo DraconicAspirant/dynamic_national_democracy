@@ -1,7 +1,7 @@
 title: Streetfighting
 new-page: true
 is-card: true
-on-arrival: streetfighting_timer = 6; month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25; strife += 1
+on-arrival: streetfighting_timer = 6; month_actions += 1; vb_militarization_cost = 2 if vb_militancy > 0.1 else vb_militarization_cost = 1; vb_militarization_cost = 3 if vb_militancy > 0.25; strife += 1
 view-if: year >= 1930 and sa_strength >= 150 and streetfighting_timer == 0 and not return_to_normalcy
 card-image: img/blutmai_2.jpg
 tags: party_affairs; antifascism
@@ -13,7 +13,7 @@ Battles rage on the streets between the <span style="color: #7A3C00;">Nazi</span
 We must do something to protect the workers against these predations.
 
 # - @battle: Test our defense units in battle against the fascists!
-- @arm_rb: Increase training and armaments for the Reichsbanner.
+- @arm_vb: Increase training and armaments for the Reichsbanner.
 - @if_training: Train union members to fight as part of the <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span>.
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
 - @peace: Try to avoid all militant confrontations, as much as possible.
@@ -21,17 +21,17 @@ We must do something to protect the workers against these predations.
 - @easy_discard
 
 @battle
-view-if: rb_militancy > 0.1 and rb_militancy < 0.5
-on-arrival: rb_militancy += 0.1; sa_strength += 40; rb_strength -= 100; 
+view-if: vb_militancy > 0.1 and vb_militancy < 0.5
+on-arrival: vb_militancy += 0.1; sa_strength += 40; vb_strength -= 100; 
 max-visits: 1
 
 Many Reichsbanner members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provide ample recruiting material for the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span>.
 
-@arm_rb
-subtitle: -[+ rb_militarization_cost +] resource
-choose-if: resources >= rb_militarization_cost
-unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
-on-arrival: resources -= rb_militarization_cost; rb_militancy += 0.06; rb_strength += 50; sa_strength += 50; z_relation -= 3 if strife < 5; ddp_relation -= 3 if strife < 5; lvp_relation -= 3 if strife < 5
+@arm_vb
+subtitle: -[+ vb_militarization_cost +] resource
+choose-if: resources >= vb_militarization_cost
+unavailable-subtitle: Not enough resources ([+ vb_militarization_cost +] needed).
+on-arrival: resources -= vb_militarization_cost; vb_militancy += 0.06; vb_strength += 50; sa_strength += 50; z_relation -= 3 if strife < 5; wp_relation -= 3 if strife < 5; lvp_relation -= 3 if strife < 5
 
 We have increased training and purchased more armaments for the Reichsbanner.
 
@@ -40,26 +40,26 @@ We have increased training and purchased more armaments for the Reichsbanner.
 
 @if_training
 view-if: iron_front_formed == 1
-on-arrival: rb_militancy += 0.03; rb_strength += 200; sa_strength += 50; 
+on-arrival: vb_militancy += 0.03; vb_strength += 200; sa_strength += 50; 
 max-visits: 2
 
 As part of the <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span>, we are increasing coordination between the Reichsbanner and the unions, and many union members want to become more involved.
 
 @prussian_police_training
 view-if: prussia_leader = "Braun" or prussia_leader = "Rosenfeld" and prussian_police_loyalty > 0.5
-on-arrival: rb_militancy += 0.05; sa_strength += 50; prussian_police_training += 1
+on-arrival: vb_militancy += 0.05; sa_strength += 50; prussian_police_training += 1
 
 The loyal sections of the Prussian police can help train the Reichsbanner.
 
 @peace
-on-arrival: rb_militancy -= 0.02; rb_strength -= 50; pacifism += 1
+on-arrival: vb_militancy -= 0.02; vb_strength -= 50; militarism += 1
 
 By not fighting, the strength of the Reichsbanner atrophies. Pacifists in the party are gaining the upper hand.
 
 @truce_rfb
-choose-if: kpd_relation >= 45
+choose-if: nsdap_relation >= 45
 view-if: kpd_truce == 0
 unavailable-subtitle: The <span style="color: #700000;">KPD</span> is not interested.
-on-arrival: kpd_truce = 1; kpd_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
+on-arrival: kpd_truce = 1; nsdap_relation += 5; rfb_strength += 50; vb_strength += 50; sa_strength += 50;
 
 We have made at least a temporary truce with the <span style="color: #700000;">**KPD**</span>, so that our respective paramilitaries will stop fighting.
