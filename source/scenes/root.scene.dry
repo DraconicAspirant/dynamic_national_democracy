@@ -442,9 +442,9 @@ Q.dnvp_in_government_time = 0;
 Q.z_in_government = 1;
 Q.lvp_in_government = 1;
 Q.wp_in_government = 0;
-Q.udnvp_in_government = 1;
-Q.dnvp_in_government = 0;
+Q.uspd_in_government = 1;
 Q.nsdap_in_government = 0;
+Q.spd_in_government = 0;
 
 // make sure everything in this section is perfect
 // Conservative coalition = Z + BVP + WP + Others + DNVP
@@ -850,7 +850,7 @@ on-arrival: difficulty = -1; resources = 4; dues = 3; sh_strength = 650; nsdap_r
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; sh_strength = 400; christiansocial_dissent = 25; right_dissent = 30; youngconservative_dissent = 25; agrarian_dissent = 22; z_relation = 43; nsdap_relation = 23; uspd_relation = 28; wp_relation = 53; budget = 3
+on-arrival: difficulty = 1; resources = 0; dues = 1; sh_strength = 400; christiansocial_dissent = 25; right_dissent = 30; youngconservative_dissent = 25; agrarian_dissent = 22; z_relation = 43; nsdap_relation = 23; uspd_relation = 28; wp_relation = 53; budget = 3;
 go-to: 1928_main
 
 @1928_historical
