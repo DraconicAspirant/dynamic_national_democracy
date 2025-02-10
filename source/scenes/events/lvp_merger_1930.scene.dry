@@ -3,16 +3,16 @@ subtitle: The future of the liberal movement will be decided here.
 view-if: lvp_merger_2_timer == 0 and lvp_timer_2_trigger
 on-arrival: {!
 Q.lvp_formation_points = 0;
-if (Q.dvp_relation >= 35) {
+if (Q.uspd_relation >= 35) {
     Q.lvp_formation_points += 1;
 }
-if (Q.dvp_relation < 20) {
+if (Q.uspd_relation < 20) {
     Q.lvp_formation_points += 1;
 }
-if (Q.ddp_relation < 40) {
+if (Q.wp_relation < 40) {
     Q.lvp_formation_points += 1;
 }
-if (Q.ddp_relation + Q.dvp_relation >= 100) {
+if (Q.wp_relation + Q.uspd_relation >= 100) {
     Q.lvp_formation_points += 1;
 }
 if (Q.liberal_vote < 7) {
@@ -30,10 +30,10 @@ if (Q.ddp_leader == "Lemmer") {
 if (Q.dvp_leader == "Luther") {
     Q.lvp_formation_points += 2;
 }
-if (Q.pro_republic >= 50) {
+if (Q.anti_democracy >= 50) {
     Q.lvp_formation_points += 1;
 }
-if (Q.spd_votes >= 32) {
+if (Q.uspd_votes >= 32) {
     Q.lvp_formation_points += 2;
 }
 !}
@@ -53,7 +53,7 @@ Meanwhile, the Liberal Association has made significant progress in preparing fo
 
 @dvp_success
 view-if: lvp_formation_points >= 4
-on-arrival: dvp_relation += 2; dvp_left += 2
+on-arrival: uspd_relation += 2; dvp_left += 2
 face-image: img/weimar_coalition_3.jpg
 
 The momentum towards liberal unity has proven too great for the holdouts within the <span style="color: #C0A054;">**DVP**</span>'s right wing to stand against. The party has officially voted to approve the merger with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, although the latter has yet to reach a final decision.
@@ -64,7 +64,7 @@ Despite this victory, many are halfhearted in their support of liberal unity, on
 
 @dvp_fail
 view-if: lvp_formation_points < 4
-on-arrival: dvp_relation -= 3; dvp_right += 5; new_middle_dvp -= 2; old_middle_dvp -= 2; pro_republic -= 3; liberal_cooperation -= 10
+on-arrival: uspd_relation -= 3; dvp_right += 5; new_middle_wp -= 2; old_middle_wp -= 2; anti_democracy -= 3; liberal_cooperation -= 10
 face-image: img/portraits/hitler.jpg
 
 Unfortunately, the efforts to unify the liberal parties have ended in failure. The right wing and industrial backers of the <span style="color: #C0A054;">**DVP**</span> successfully swayed a narrow majority to reject the merger proposal. This outcome has greatly demoralized the German middle and has forced the disbandment of the Liberal Association.
